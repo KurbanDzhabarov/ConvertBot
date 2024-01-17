@@ -28,7 +28,7 @@ def values(message: telebot.types.Message):
 @bot.message_handler(content_types=["text"])
 def get_price(message: telebot.types.Message):
     try:
-        values = message.text.split(" ")
+        values = message.text.lower().split(" ")
 
         if len(values) != 3 :
             raise Apiexception(f"Вы ввели {len(values)} параметров, ведите 3 параметра.")
